@@ -564,7 +564,7 @@ const imageURL = document.querySelectorAll("img")[0];
 (0, _apiJs.getProductData)().then((product)=>{
     title.textContent = product.title;
     description.textContent = product.description;
-    imageURL.attributes[0].textContent = product.image;
+    imageURL.attributes["src"].textContent = product.image;
 });
 
 },{"./api.js":"8Zgej"}],"8Zgej":[function(require,module,exports) {

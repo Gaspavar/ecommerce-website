@@ -7,5 +7,5 @@ const imageURL = document.querySelectorAll("img")[0];
 getProductData().then((product) => {
     title.textContent = product.title;
     description.textContent = product.description
-    imageURL.attributes[0].textContent = product.image
+    imageURL.attributes["src"].textContent = product.image
 });
