@@ -558,8 +558,13 @@ function hmrAccept(bundle, id) {
 
 },{}],"8lqZg":[function(require,module,exports) {
 var _apiJs = require("./api.js");
+const title = document.querySelectorAll("h1")[0];
+const description = document.querySelectorAll("p")[0];
+const imageURL = document.querySelectorAll("img")[0];
 (0, _apiJs.getProductData)().then((product)=>{
-    console.log(product);
+    title.textContent = product.title;
+    description.textContent = product.description;
+    imageURL.attributes[0].textContent = product.image;
 });
 
 },{"./api.js":"8Zgej"}],"8Zgej":[function(require,module,exports) {
@@ -999,11 +1004,11 @@ exports.export = function(dest, destName, get) {
 
 },{}],"hKzvT":[function(require,module,exports) {
 "use strict";
-exports.ReactNativeFile = require("bfc655b4630abc5e");
-exports.extractFiles = require("85c0e77fcec15759");
-exports.isExtractableFile = require("2c014e20d87b35e");
+exports.ReactNativeFile = require("27c91f3ca67e932a");
+exports.extractFiles = require("c88f63ff58d8de9");
+exports.isExtractableFile = require("5fc8d200e82ae19d");
 
-},{"bfc655b4630abc5e":"iC9PE","85c0e77fcec15759":"cYQU7","2c014e20d87b35e":"7dAZ4"}],"iC9PE":[function(require,module,exports) {
+},{"27c91f3ca67e932a":"iC9PE","c88f63ff58d8de9":"cYQU7","5fc8d200e82ae19d":"7dAZ4"}],"iC9PE":[function(require,module,exports) {
 "use strict";
 module.exports = function ReactNativeFile(_ref) {
     var uri = _ref.uri, name = _ref.name, type = _ref.type;
@@ -1014,7 +1019,7 @@ module.exports = function ReactNativeFile(_ref) {
 
 },{}],"cYQU7":[function(require,module,exports) {
 "use strict";
-var defaultIsExtractableFile = require("303c90726909ad8f");
+var defaultIsExtractableFile = require("ff38282b0ebd5d06");
 module.exports = function extractFiles(value, path, isExtractableFile) {
     if (path === void 0) path = "";
     if (isExtractableFile === void 0) isExtractableFile = defaultIsExtractableFile;
@@ -1058,14 +1063,14 @@ module.exports = function extractFiles(value, path, isExtractableFile) {
     };
 };
 
-},{"303c90726909ad8f":"7dAZ4"}],"7dAZ4":[function(require,module,exports) {
+},{"ff38282b0ebd5d06":"7dAZ4"}],"7dAZ4":[function(require,module,exports) {
 "use strict";
-var ReactNativeFile = require("cf491d4266f10262");
+var ReactNativeFile = require("76af65cdc9aac895");
 module.exports = function isExtractableFile(value) {
     return typeof File !== "undefined" && value instanceof File || typeof Blob !== "undefined" && value instanceof Blob || value instanceof ReactNativeFile;
 };
 
-},{"cf491d4266f10262":"iC9PE"}],"2TZrR":[function(require,module,exports) {
+},{"76af65cdc9aac895":"iC9PE"}],"2TZrR":[function(require,module,exports) {
 /* eslint-env browser */ module.exports = typeof self == "object" ? self.FormData : window.FormData;
 
 },{}],"eJxK5":[function(require,module,exports) {
