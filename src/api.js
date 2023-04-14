@@ -33,6 +33,8 @@ const query = gql`
 `;
 const response = await request("https://mock.shop/api", query);
 
+// Pulled relevant data from API
+
 const productInfo = 
 {
     title: response.product.title,

@@ -1,12 +1,10 @@
 import {getProductData} from "./api.js";
 
+// Selecting DOM elements
+
 const title = document.querySelector(".title");
 const description = document.querySelector(".description");
 const imageURL = document.querySelector(".main-image");
-
-// const firstVariantImage = document.querySelector(".first-variant-image")
-// const secondVariantImage = document.querySelector(".second-variant-image")
-// const thirdVariantImage = document.querySelector(".third-variant-image")
 
 const firstVariantTitle = document.querySelector(".first-variant-title")
 const secondVariantTitle = document.querySelector(".second-variant-title")
