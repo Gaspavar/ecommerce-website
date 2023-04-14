@@ -558,13 +558,25 @@ function hmrAccept(bundle, id) {
 
 },{}],"8lqZg":[function(require,module,exports) {
 var _apiJs = require("./api.js");
-const title = document.querySelectorAll("h1")[0];
-const description = document.querySelectorAll("p")[0];
-const imageURL = document.querySelectorAll("img")[0];
+const title = document.querySelector(".title");
+const description = document.querySelector(".description");
+const imageURL = document.querySelector(".main-image");
+const firstVariantImage = document.querySelector(".first-variant-image");
+const secondVariantImage = document.querySelector(".second-variant-image");
+const thirdVariantImage = document.querySelector(".third-variant-image");
+const firstVariantTitle = document.querySelector(".first-variant-title");
+const secondVariantTitle = document.querySelector(".second-variant-title");
+const thirdVariantTitle = document.querySelector(".third-variant-title");
 (0, _apiJs.getProductData)().then((product)=>{
     title.textContent = product.title;
     description.textContent = product.description;
     imageURL.attributes["src"].textContent = product.image;
+    firstVariantImage.attributes["src"].textContent = product.firstVariant.image;
+    secondVariantImage.attributes["src"].textContent = product.secondVariant.image;
+    thirdVariantImage.attributes["src"].textContent = product.thirdVariant.image;
+    firstVariantTitle.textContent = product.firstVariant.title;
+    secondVariantTitle.textContent = product.secondVariant.title;
+    thirdVariantTitle.textContent = product.thirdVariant.title;
 });
 
 },{"./api.js":"8Zgej"}],"8Zgej":[function(require,module,exports) {
