@@ -1025,11 +1025,11 @@ exports.export = function(dest, destName, get) {
 
 },{}],"hKzvT":[function(require,module,exports) {
 "use strict";
-exports.ReactNativeFile = require("614ff08db28f5b2c");
-exports.extractFiles = require("ae2d195e8dc62144");
-exports.isExtractableFile = require("c4b188e9eeb1639f");
+exports.ReactNativeFile = require("27c91f3ca67e932a");
+exports.extractFiles = require("c88f63ff58d8de9");
+exports.isExtractableFile = require("5fc8d200e82ae19d");
 
-},{"614ff08db28f5b2c":"iC9PE","ae2d195e8dc62144":"cYQU7","c4b188e9eeb1639f":"7dAZ4"}],"iC9PE":[function(require,module,exports) {
+},{"27c91f3ca67e932a":"iC9PE","c88f63ff58d8de9":"cYQU7","5fc8d200e82ae19d":"7dAZ4"}],"iC9PE":[function(require,module,exports) {
 "use strict";
 module.exports = function ReactNativeFile(_ref) {
     var uri = _ref.uri, name = _ref.name, type = _ref.type;
@@ -1040,7 +1040,7 @@ module.exports = function ReactNativeFile(_ref) {
 
 },{}],"cYQU7":[function(require,module,exports) {
 "use strict";
-var defaultIsExtractableFile = require("7dda11c482e3a561");
+var defaultIsExtractableFile = require("ff38282b0ebd5d06");
 module.exports = function extractFiles(value, path, isExtractableFile) {
     if (path === void 0) path = "";
     if (isExtractableFile === void 0) isExtractableFile = defaultIsExtractableFile;
@@ -1084,14 +1084,14 @@ module.exports = function extractFiles(value, path, isExtractableFile) {
     };
 };
 
-},{"7dda11c482e3a561":"7dAZ4"}],"7dAZ4":[function(require,module,exports) {
+},{"ff38282b0ebd5d06":"7dAZ4"}],"7dAZ4":[function(require,module,exports) {
 "use strict";
-var ReactNativeFile = require("bd04b714fee20051");
+var ReactNativeFile = require("76af65cdc9aac895");
 module.exports = function isExtractableFile(value) {
     return typeof File !== "undefined" && value instanceof File || typeof Blob !== "undefined" && value instanceof Blob || value instanceof ReactNativeFile;
 };
 
-},{"bd04b714fee20051":"iC9PE"}],"2TZrR":[function(require,module,exports) {
+},{"76af65cdc9aac895":"iC9PE"}],"2TZrR":[function(require,module,exports) {
 /* eslint-env browser */ module.exports = typeof self == "object" ? self.FormData : window.FormData;
 
 },{}],"eJxK5":[function(require,module,exports) {
