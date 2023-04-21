@@ -6,11 +6,57 @@ const title = document.querySelector(".title");
 const description = document.querySelector(".description");
 const imageURL = document.querySelector(".main-image");
 
-const firstVariantTitle = document.querySelector(".first-variant-title")
-const secondVariantTitle = document.querySelector(".second-variant-title")
-const thirdVariantTitle = document.querySelector(".third-variant-title")
+const selection = document.getElementById("variant-selection");
+const price = document.querySelector(".price");
+const currency = document.querySelector(".currency");
+const variantTitle = document.querySelector(".variant-name").children[0];
 
-const variantSelection = document.querySelector("#variant-selection")
+console.log(variantTitle)
+
+
+// Writing a function to handle variant display to the DOM
+
+let variantValues = [];
+
+const assignVariants = (item) => {
+
+    let numberOfVariants = item.variants.length;
+
+
+    for (let i = 0; i < numberOfVariants; i++) {
+
+        let variantTitles = item.variants[i].title;
+        let variantID = item.variants[i].id;
+        let variantImage = item.variants[i].image.url
+        let variantPrice = item.variants[i].price.amount
+        let variantCurrency = item.variants[i].price.currencyCode
+
+        variantValues.push({"id" : variantID, "image": variantImage, "price": variantPrice, "currency": variantCurrency, "name": variantTitles})
+
+        // Assigning value attribute to options
+        const options = document.createElement("option");
+        options.setAttribute("value", `${variantID}`);
+        options.textContent = `${variantTitles}`
+        selection.append(options);
+
+    }
+}
+
+// Writing a function to change DOM elements on form selection
+
+
+const changeVariant = (event) => {
+
+    for (let i = 0; i < variantValues.length; i++) {
+        if (event.target.value === variantValues[i].id) {
+            imageURL.attributes["src"].textContent = variantValues[i].image;
+            price.textContent = variantValues[i].price;
+            currency.textContent = variantValues[i].currency;
+            variantTitle.textContent = variantValues[i].name
+        }
+    }
+
+}
 
 
 getProductData().then((product) => {
@@ -18,24 +64,12 @@ getProductData().then((product) => {
     description.textContent = product.description;
     imageURL.attributes["src"].textContent = product.image;
 
-    firstVariantTitle.textContent = product.firstVariant.title;
-    secondVariantTitle.textContent = product.secondVariant.title;
-    thirdVariantTitle.textContent = product.thirdVariant.title;
+    assignVariants(product)
 
-    // Writing a function to change image displayed depending on the variant selected
+    selection.addEventListener("change", changeVariant)
 
-    const changeImageURL = (variant) => {
-        if (variant.target.value === "green") {
-            imageURL.attributes["src"].textContent = product.firstVariant.image;
-        } else if (variant.target.value === "olive") {
-            imageURL.attributes["src"].textContent = product.secondVariant.image;
-        } else if (variant.target.value === "ocean") {
-            imageURL.attributes["src"].textContent = product.thirdVariant.image;
-        }
-    }
-
-    variantSelection.addEventListener("change", changeImageURL)
 });
+
 
 
 // Loop in api.js to get all variants - leverage product IDs
