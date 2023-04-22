@@ -566,7 +566,6 @@ const selection = document.getElementById("variant-selection");
 const price = document.querySelector(".price");
 const currency = document.querySelector(".currency");
 const variantTitle = document.querySelector(".variant-name").children[0];
-console.log(variantTitle);
 // Writing a function to handle variant display to the DOM
 let variantValues = [];
 const assignVariants = (item)=>{
