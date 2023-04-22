@@ -12,7 +12,7 @@ const query = gql`
         id
         url
       }
-      variants(first: 3) {
+      variants(first: 15) {
         edges {
           cursor
           node {
