@@ -68,10 +68,6 @@ getProductData().then((product) => {
 
 });
 
-
-
-// Loop in api.js to get all variants - leverage product IDs
-// Change logic in index.js to get all variants with a loop
 // Create another .js file for modular approach - build variants programmatically
 
 

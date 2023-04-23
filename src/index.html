@@ -7,7 +7,7 @@
   <script src="./index.js" type="module"></script>
 </head>
 <body>
-  <div class="product">
+  <div class="product container mx-auto p-20">
     <h1 class="title text-3xl font-bold underline"></h1>
     <p class="description"></p>
     <img src=" " alt="" class="main-image">
@@ -16,18 +16,18 @@
       <h2></h2>
     </div>
 
-    <div class="cost">
-      <p class="price"></p>
+    <div class="cost flex">
+      <p class="price mr-2"></p>
       <p class="currency"></p>
     </div>
-    
+      <label for="variant-selection">Choose a variant:</label>
+
+    <select name="variants" id="variant-selection">
+        <option value="">--Please choose an option--</option>
+    </select>    
   </div>
 
-  <label for="variant-selection">Choose a variant:</label>
 
-<select name="variants" id="variant-selection">
-    <option value="">--Please choose an option--</option>
-</select>
 
 </body>
 </html>
