@@ -51,6 +51,7 @@ const changeVariant = (event) => {
             price.textContent = variantValues[i].price;
             currency.textContent = variantValues[i].currency;
             variantTitle.textContent = variantValues[i].name
+            console.log(event.target)
         }
     }
 
